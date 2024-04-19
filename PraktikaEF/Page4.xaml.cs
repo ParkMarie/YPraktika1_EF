@@ -26,5 +26,12 @@ namespace PraktikaEF
             InitializeComponent();
             OrderInfoDataGrid.ItemsSource = context.OrderInfo.ToList();
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Window.GetWindow(this).Close();
+        }
     }
 }

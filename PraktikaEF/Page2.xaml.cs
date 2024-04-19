@@ -25,6 +25,33 @@ namespace PraktikaEF
         {
             InitializeComponent();
             BooksDataGrid.ItemsSource = context.Books.ToList();
+            ComboBox.ItemsSource = context.Books.ToList();
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Window.GetWindow(this).Close();
+        }
+
+        private void Button_Search_Click(object sender, RoutedEventArgs e)
+        {
+            BooksDataGrid.ItemsSource = context.Books.ToList().Where(item => item.Author.Contains(Search_window.Text));
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            BooksDataGrid.ItemsSource = context.Books.ToList();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ComboBox.SelectedItem != null)
+            {
+                var selected = ComboBox.SelectedItem as Books;
+                BooksDataGrid.ItemsSource = context.Books.ToList().Where(item => item.Author == selected.Author);
+            }
         }
     }
 }

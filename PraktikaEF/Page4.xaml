@@ -9,6 +9,7 @@
       Title="Page4">
 
     <Grid>
-        <DataGrid x:Name="OrderInfoDataGrid"/>
+        <DataGrid x:Name="OrderInfoDataGrid" Background="#FF887DDA"/>
+        <Button Content="Назад" Margin="310,417,0,0" FontSize="22" Click="Back_Click" Height="33" VerticalAlignment="Top" HorizontalAlignment="Left" Width="180"/>
     </Grid>
 </Page>

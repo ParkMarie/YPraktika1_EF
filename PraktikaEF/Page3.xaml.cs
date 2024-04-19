@@ -25,6 +25,29 @@ namespace PraktikaEF
         {
             InitializeComponent();
             OrdersDataGrid.ItemsSource = context.Orders.ToList();
+           
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Window.GetWindow(this).Close();
+        }
+
+        private void Button_Search_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            OrdersDataGrid.ItemsSource = context.Orders.ToList();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

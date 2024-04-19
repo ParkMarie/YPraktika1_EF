@@ -46,6 +46,10 @@ namespace PraktikaEF
             FourPage.Content = new Page4();
         }
 
+        private void FourPage_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
     }
 
 }
